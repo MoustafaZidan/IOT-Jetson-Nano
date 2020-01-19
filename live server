@@ -1,0 +1,28 @@
+import socket                                                                    #import library of socket
+import sys
+mysock=socket.socket(soket.AF-INET,socket.SOCK-STREAM)
+host=gethostbyname("enter your host ")                                            #you should enter your host with DNS eg..(WWW.google.com)
+
+try:
+     mysock.bind("host",port)                                                         #you should replace port with nuber of the port you want eg.(80)   
+except socket.error
+       print("failed to bind")
+       sys.exit()
+       
+mysock.listen(4)
+while True:
+          conn,addr=mysock.accept()
+          
+          data=conn.recv(1000)
+        
+        if not data:
+          break 
+          
+         conn.sendall(data)
+         
+conn.close()                                                                      #closing Connection
+
+mysock.close()                                                                     #closing My Socket
+
+
+       
